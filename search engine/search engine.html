@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Suivi PDR</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head> 
+
+<style type="text/css"> 
+
+     body{ font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+          font-size: 15px; 
+          background-color:#ededed; 
+
+		}
+		input[type=text]{
+            width: 35%;
+		}
+
+	</style>
+
+
+<body>
+<div class="custom-control custom-switch mr-5 ">
+                <input type="checkbox" class="custom-control-input" id="selector">
+                <label class="custom-control-label text-white" for="selector">Dark Mode</label>
+            </div>
+
+<div class="container" ng-app="app" ng-controller="ListController">
+
+<center>
+        
+     <h1 class="jumbotron p-5 bg-secondary text-white" >Central danone Suivi PDR</h1>
+        
+       <input type="text" class="form-control mb-5" ng-model="allKeywords" placeholder="Search...." />
+
+</center>
+
+        <table class="table table-bordered table-striped ">
+            <thead class="table-dark">
+<th>Code Article</th> <th>Désignation</th> <th>PU</th> <th>Qté</th> <th>Valeur</th> <th>Atelier</th> <th>Machine</th> <th>Emplacement</th> <th>Date</th> <th>Responsable</th>
+            </thead>
+        
+            <tr ng-repeat="search in Searches | filter: allKeywords">
+                <td>{{search.country}}</td>
+                <td ng-bind="search.city"></td>
+                <td>{{search.code}}</td>
+                <td>{{search.bh}}</td>
+                <td>{{search.bv}}</td>
+                <td>{{search.bg}}</td>
+                <td>{{search.bf}}</td>
+                <td>{{search.bq}}</td>
+                <td>{{search.bo}}</td>
+                <td>{{search.bui}}</td>
+            </tr>
+        
+        </table>
+
+</div>
+
+
+
+<script>
+    var search = [
+            { country: '', city: 'Axe', code: '', bh: '', bv: '', bg: 'Conditionnement', bf: 'Tetratop4', bq: 'Pince : Section emballage',bo: '21/05/2024', bui: 'Tanafaat'},
+            { country: '', city: 'Poulie', code: '', bh: '', bv: '', bg: 'Conditionnement', bf: 'Tetratop4', bq: 'Pince : Section emballage',bo: '21/05/2024', bui: 'Tanafaat'},
+            { country: '', city: 'Nozzle', code: '', bh: '', bv: '', bg: 'Conditionnement', bf: 'Tetratop5', bq: 'Buse de doseur:HCCU',bo: '16/05/2024', bui: 'Conducteur'},
+            { country: '01067J', city: 'JOINT SMS', code: '12,49', bh: '2', bv: '24,98', bg: 'Poudrage', bf: '', bq: ' LAIT CRU TLC2 100T',bo: '22/05/2024', bui: 'Zakaria'}
+    ];
+
+    var app = angular.module("app", []); app.controller("ListController",
+              ["$scope", function ($scope) { $scope.Searches = search; }]); 
+
+</script>
+
+  <script>
+        $(document).ready(function(){
+            $("#selector").change(function(){
+                $("body").toggleClass("bg-secondary");
+               $("nav").toggleClass("navbar-dark bg-dark");
+               $(".custom-control-label").toggleClass("text-white");
+               $("h1").toggleClass("text-white");
+               $("h5").toggleClass("text-white");
+
+            })
+
+
+
+        })
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
