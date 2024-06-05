@@ -1,101 +1,96 @@
-table tr td{
-    vertical-align: middle;
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-
-td button{
-    margin: 5px;
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #4070f4;
 }
-
-td button i{
-    font-size: 20px;
+.container {
+  position: relative;
+  max-width: 370px;
+  width: 100%;
+  padding: 25px;
+  border-radius: 8px;
+  background-color: #fff;
 }
-
-
-.modal-header{
-    background: #0d6efd;
-    color: #fff;
+.container header {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
 }
-
-.modal-body form {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0;
+.container form {
+  margin-top: 30px;
 }
-
-.modal-body form .imgholder{
-    width: 200px;
-    height: 200px;
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
+form .field {
+  margin-bottom: 20px;
 }
-
-.imgholder .upload{
-    position: absolute;
-    bottom: 0;
-    left: 10;
-    width: 100%;
-    height: 100px;
-    background: rgba(0,0,0,0.3);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+form .input-field {
+  position: relative;
+  height: 55px;
+  width: 100%;
 }
-
-.upload i{
-    color: #fff;
-    font-size: 35px;
+.input-field input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 0 15px;
+  border: 1px solid #d1d1d1;
 }
-
-.imgholder:hover .upload{
-    display: flex;
+.invalid input {
+  border-color: #d93025;
 }
-
-.imgholder .upload input{
-    display: none;
+.input-field .show-hide {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #919191;
+  cursor: pointer;
+  padding: 3px;
 }
-
-.modal-body form .inputField{
-    flex-basis: 68%;
-    border-left: 5px groove blue;
-    padding-left: 20px;
+.field .error {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+  color: #d93025;
+  font-size: 13px;
+  display: none;
 }
-
-form .inputField > div{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.invalid .error {
+  display: flex;
 }
-
-form .inputField > div label{
-    font-size: 20px;
-    font-weight: 500;
+.error .error-icon {
+  margin-right: 6px;
+  font-size: 15px;
 }
-
-#userForm form .inputField > div label::after{
-    content: "*";
-    color: red;
+.create-password .error {
+  align-items: flex-start;
 }
-
-form .inputField > div input{
-    width: 75%;
-    padding: 10px;
-    border: none;
-    outline: none;
-    background: transparent;
-    border-bottom: 2px solid blue;
+.create-password .error-icon {
+  margin-top: 4px;
 }
-
-.modal-footer .submit{
-    font-size: 18px;
+.button {
+  margin: 25px 0 6px;
 }
-
-
-#readData form .inputField > div input{
-    color: #000;
-    font-size: 18px;
+.button input {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #4070f4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button input:hover {
+  background-color: #0e4bf1;
 }
