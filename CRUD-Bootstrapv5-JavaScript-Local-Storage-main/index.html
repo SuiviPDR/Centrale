@@ -1,69 +1,50 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Email and Password Validation</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- Boxicons CSS -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <header>Signup</header>
-      <form action="https://www.codinglabweb.com/">
-        <div class="field email-field">
-          <div class="input-field">
-            <input type="email" placeholder="Enter your email" class="email" />
-          </div>
-          <span class="error email-error">
-            <i class="bx bx-error-circle error-icon"></i>
-            <p class="error-text">Please enter a valid email</p>
-          </span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suivi PDR</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <header>Send us a Message</header>
+    <form action="#">
+      <div class="dbl-field">
+        <div class="field">
+          <input type="text" name="name" placeholder="Enter your name">
+          <i class='fas fa-user'></i>
         </div>
-        <div class="field create-password">
-          <div class="input-field">
-            <input
-              type="password"
-              placeholder="Create password"
-              class="password"
-            />
-            <i class="bx bx-hide show-hide"></i>
-          </div>
-          <span class="error password-error">
-            <i class="bx bx-error-circle error-icon"></i>
-            <p class="error-text">
-              Please enter atleast 8 charatcer with number, symbol, small and
-              capital letter.
-            </p>
-          </span>
+        <div class="field">
+          <input type="text" name="email" placeholder="Enter your email">
+          <i class='fas fa-envelope'></i>
         </div>
-        <div class="field confirm-password">
-          <div class="input-field">
-            <input
-              type="password"
-              placeholder="Confirm password"
-              class="cPassword"
-            />
-            <i class="bx bx-hide show-hide"></i>
-          </div>
-          <span class="error cPassword-error">
-            <i class="bx bx-error-circle error-icon"></i>
-            <p class="error-text">Password don't match</p>
-          </span>
+      </div>
+      <div class="dbl-field">
+        <div class="field">
+          <input type="text" name="phone" placeholder="Enter your phone">
+          <i class='fas fa-phone-alt'></i>
         </div>
-        <div class="input-field button">
-          <input type="submit" value="Submit Now" />
+        <div class="field">
+          <input type="text" name="website" placeholder="Enter your website">
+          <i class='fas fa-globe'></i>
         </div>
-      </form>
-    </div>
-    <!-- JavaScript -->
-   <script src="script.js"></script>
-  </body>
+      </div>
+      <div class="message">
+        <textarea placeholder="Write your message" name="message"></textarea>
+        <i class="material-icons">message</i>
+      </div>
+      <div class="button-area">
+        <button type="submit">Send Message</button>
+        <span></span>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
 </html>
