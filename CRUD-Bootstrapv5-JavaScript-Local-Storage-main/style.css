@@ -76,6 +76,7 @@ form button:hover{
 }
 form .textarea-field .item{
     resize: none;
+    width: 300px;
 }
 form .textarea-field .error-txt{
     margin-top: -10px;
