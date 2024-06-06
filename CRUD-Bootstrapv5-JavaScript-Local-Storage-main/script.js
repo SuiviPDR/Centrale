@@ -1,18 +1,23 @@
 const form = document.querySelector("form");
-const fullName = document.getElementById("name");
-const email = document.getElementById("email");
-const phone = document.getElementById("phone");
-const subject = document.getElementById("subject");
-const mess = document.getElementById("message");
+const CodeArticle = document.getElementById("CodeArticle");
+const Désignation = document.getElementById("Désignation");
+const Qté = document.getElementById("Qté");
+const PU = document.getElementById("PU");
+const Valeur = document.getElementById("Valeur");
+const Atelier = document.getElementById("Atelier");
+const Machine = document.getElementById("Machine");
+const Emplacement = document.getElementById("Emplacement");
+const Responsable = document.getElementById("Responsable");
+const Date = document.getElementById("Date");
 function sendEmail() {
-    const bodyMessage = `full Name: ${fullName.value}<br> email: ${email.value}<br> phone: ${phone.value}<br> message: ${mess.value}`;
+    const bodyMessage = `Item code: ${CodeArticle.value}<br> Designation: ${Désignation.value}<br> unit price: ${PU.value}<br> Qty: ${Qté.value}<br> Value: ${Valeur.value}<br> Workshop: ${Atelier.value}<br> Machine: ${Machine.value}<br> Location: ${Emplacement.value}<br> Responsible: ${Responsable.value}<br> Date: ${Date.value}`;
     Email.send({
         Host : "smtp.elasticemail.com",
         Username : "site2218@gmail.com",
         Password : "F210CBE70B302A2A5E91D2A2CB2E52A923DD",
         To : 'site2218@gmail.com',
         From : "site2218@gmail.com",
-        Subject : subject.value,
+        Subject : Responsable.value,
         Body : bodyMessage
     }).then(
       message => {
@@ -26,7 +31,6 @@ function sendEmail() {
       }
     );
 }
-
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     
