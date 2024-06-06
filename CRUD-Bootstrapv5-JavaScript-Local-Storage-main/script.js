@@ -5,7 +5,7 @@ const phone = document.getElementById("phone");
 const subject = document.getElementById("subject");
 const mess = document.getElementById("message");
 function sendEmail() {
-    const bodyMessage = `Full Name: ${fullName.value}<br> Email: ${email.value}<br> Phone: ${phone.value}<br> Message: ${mess.value}`;
+    const bodyMessage = `full Name: ${fullName.value}<br> email: ${email.value}<br> phone: ${phone.value}<br> message: ${mess.value}`;
     Email.send({
         Host : "smtp.elasticemail.com",
         Username : "site2218@gmail.com",
@@ -15,11 +15,20 @@ function sendEmail() {
         Subject : subject.value,
         Body : bodyMessage
     }).then(
-      message => alert(message)
+      message => {
+        if (message == "OK") {
+            Swal.fire({
+                title: "Good job!",
+                text: "Message send",
+                icon: "success"
+              });
+        }
+      }
     );
 }
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+    
     sendEmail();
 });
