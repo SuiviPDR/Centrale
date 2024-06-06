@@ -1,30 +1,25 @@
-//Contact Form in PHP
-const form = document.querySelector("form"),
-statusTxt = form.querySelector(".button-area span");
-form.onsubmit = (e)=>{
-  e.preventDefault();
-  statusTxt.style.color = "#0D6EFD";
-  statusTxt.style.display = "block";
-  statusTxt.innerText = "Sending your message...";
-  form.classList.add("disabled");
-
-  let xhr = new XMLHttpRequest();
-  xhr.open("POST", "message.php", true);
-  xhr.onload = ()=>{
-    if(xhr.readyState == 4 && xhr.status == 200){
-      let response = xhr.response;
-      if(response.indexOf("required") != -1 || response.indexOf("valid") != -1 || response.indexOf("failed") != -1){
-        statusTxt.style.color = "red";
-      }else{
-        form.reset();
-        setTimeout(()=>{
-          statusTxt.style.display = "none";
-        }, 3000);
-      }
-      statusTxt.innerText = response;
-      form.classList.remove("disabled");
-    }
-  }
-  let formData = new FormData(form);
-  xhr.send(formData);
+const form = document.querySelector("form");
+const fullName = document.getElementById("name");
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
+const subject = document.getElementById("subject");
+const mess = document.getElementById("message");
+function sendEmail() {
+    const bodyMessage = `Full Name: ${fullName.value}<br> Email: ${email.value}<br> Phone: ${phone.value}<br> Message: ${mess.value}`;
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "site2218@gmail.com",
+        Password : "F210CBE70B302A2A5E91D2A2CB2E52A923DD",
+        To : 'site2218@gmail.com',
+        From : "site2218@gmail.com",
+        Subject : subject.value,
+        Body : bodyMessage
+    }).then(
+      message => alert(message)
+    );
 }
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    sendEmail();
+});
