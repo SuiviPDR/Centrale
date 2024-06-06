@@ -1,50 +1,45 @@
-<!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suivi PDR</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-</head>
-<body>
-  <div class="wrapper">
-    <header>Send us a Message</header>
-    <form action="#">
-      <div class="dbl-field">
-        <div class="field">
-          <input type="text" name="name" placeholder="Enter your name">
-          <i class='fas fa-user'></i>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../53026577976.png">
+    <title>Suivi PDR</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section class="contact">
+      <h2>Suivi PDR</h2>
+      <form action="#">
+        <div class="input-box">
+          <div class="input-field field">
+            <input type="text" placeholder="Full Name" id="name" class="item" autocomplete="off">
+            <div class="error-txt">Full name can't be blank</div>
+          </div>
+          <div class="input-field field">
+            <input type="text" placeholder="Email" id="email" class="item" autocomplete="off">
+            <div class="error-txt">Email can't be blank</div>
+          </div>
         </div>
-        <div class="field">
-          <input type="text" name="email" placeholder="Enter your email">
-          <i class='fas fa-envelope'></i>
+          <div class="input-box">
+          <div class="input-field field">
+            <input type="text" placeholder="Phone" id="phone" class="item" autocomplete="off">
+            <div class="error-txt">Phone can't be blank</div>
+          </div>
+          <div class="input-field field">
+            <input type="text" placeholder="subject" id="subject" class="item" autocomplete="off">
+            <div class="error-txt">subject can't be blank</div>
+          </div>
         </div>
-      </div>
-      <div class="dbl-field">
-        <div class="field">
-          <input type="text" name="phone" placeholder="Enter your phone">
-          <i class='fas fa-phone-alt'></i>
+        <div class="textarea-field field">
+          <textarea name="" id="Message" cols="30" rows="8" placeholder="Message" class="item" autocomplete="off"></textarea>
+          <div class="error-txt">Message can't be blank</div>
         </div>
-        <div class="field">
-          <input type="text" name="website" placeholder="Enter your website">
-          <i class='fas fa-globe'></i>
-        </div>
-      </div>
-      <div class="message">
-        <textarea placeholder="Write your message" name="message"></textarea>
-        <i class="material-icons">message</i>
-      </div>
-      <div class="button-area">
-        <button type="submit">Send Message</button>
-        <span></span>
-      </div>
-    </form>
-  </div>
-
-  <script src="script.js"></script>
-
-</body>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
