@@ -23,7 +23,7 @@
   </head>
   <body>
     <style>
-      .right-menu button{ background-color: #a19d9d; border-radius: 19px; border: 1px; }
+      .right-menu button{ background-color: transparent; border-radius: 19px; border: 1px; }
       .right-menu button:hover{ background-color: #a19d9d;border-radius: 19px; border: 100px; }
     </style>
     <!-- NAVBAR -->
@@ -41,11 +41,15 @@
         <li class="nav-item">
           <a href="About us.htm" class="nav-link">About us</a>
         </li>
-        <li class="nav-item">
-          <a href="" class="nav-link">Topics</a>
-        </li>
+        <div class="right-menu">
+          <button class="menu-button">More <i class="fa-solid fa-down-long" style="color: #000000;"></i></button>
+          <div class="dropdown-menu">
+            <a href="./Contact.htm">Contact us</a>
+            <a href="./Topics.htm">Topics</a>
+          </div>
+        </div>
         <div class="nav-item">
-            <a href="./js-login-maine/index.html" class="nav-link">The Worker</a>
+            <a href="./CRUD-Bootstrapv5-JavaScript-Local-Storage-main/index.html" class="nav-link">The Worker</a>
         </div>
       </ul>
     </nav>
@@ -53,12 +57,13 @@
     <section class="hero">
       <div class="hero-section">
         <div class="content"><br><br><br>
-          <h4>Centrale Danone</h4>
+          <h4>Danone Central</h4>
           <h1>
-            It is the Centrale Danone website that will help you with anything you want
+            It is the Danone Central website that will help you a lot with anything you want
           </h1>
           <p>
-            This site is specifically tailored for spare parts tracking,ensuring seamless maintenance operations
+            This site will suit you because it guarantees you
+            <span class="purple">Quality, speed and safety</span> While you are viewing the site
           </p>
           <button class="btn"><a href="./اعرف اكثر.htm">Find out more</a></button>
         </div>
